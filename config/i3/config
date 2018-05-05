@@ -320,7 +320,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #
 # Startup Programs
 #
-exec_always compton -f
+exec_always --no-startup-id compton -f
 
 # network manager applet for network manager
 exec --no-startup-id nm-applet
