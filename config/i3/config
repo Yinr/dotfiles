@@ -151,6 +151,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+F4 kill
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
