@@ -161,7 +161,9 @@ bindsym $mod+Shift+r restart
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec exitx
 #bindsym $mod+Shift+x exec i3lock --color "$base01"
-bindsym $mod+Shift+x exec i3lock-wrapper
+bindsym $mod+x exec i3lock-wrapper
+bindsym $mod+Shift+x exec "i3lock-wrapper; sleep 1; xset dpms force off"
+bindsym Control+F12 exec xset dpms force off
 
 # change focus
 bindsym $mod+h focus left
