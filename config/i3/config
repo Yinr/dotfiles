@@ -244,7 +244,7 @@ mode "resize" {
         bindsym $mod1+r mode "default"
 }
 
-bindsym $mod1+Control+v mode "volume"
+bindsym $mod1+$mod2+v mode "volume"
 mode "volume" {
     # key bindings for volume mode
     # Pulse Audio controls
@@ -260,10 +260,10 @@ mode "volume" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod1+Control+v mode "default"
+    bindsym $mod1+$mod2+v mode "default"
 }
 
-bindsym $mod1+p mode "screenshot"
+bindsym $mod1+$mod2+p mode "screenshot"
 mode "screenshot" {
         # key bindings for screenshot mode
 
@@ -273,7 +273,7 @@ mode "screenshot" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod1+p mode "default"
+        bindsym $mod1+$mod2+p mode "default"
 }
 
 # Widow Colours
