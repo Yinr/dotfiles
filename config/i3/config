@@ -51,10 +51,11 @@ font pango:$secondFont 10
 
 # Main Settings
 #
-set $mod Mod4
+set $mod1 Mod4
+set $mod2 Mod1
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$mod1 to drag floating windows to their wanted position
+floating_modifier $mod1
 focus_follows_mouse no
 #mouse_warping none
 #workspace_auto_back_and_forth yes
@@ -76,16 +77,16 @@ hide_edge_borders both
 # Program Launcher
 #
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+#bindsym $mod1+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod1+d exec --no-startup-id i3-dmenu-desktop
 set $rofi_theme -lines 5 -eh 2 -columns 2 -font 'Noto Sans CJK SC 14' -opacity 80 -theme Arc-Dark
 #set $rofi_theme -lines 5 -eh 2 -columns 2 -font 'Noto Sans CJK SC 14' -width 100 -padding 400 -opacity '80' -show-icons -bw 0 -bc '$base01' -bg '$base02' -fg '$base07' -hlbg '$base05' -hlfg '#9575cd'
-bindsym $mod+Shift+d exec rofi -show run $rofi_theme
-bindsym $mod+d exec rofi -show drun $rofi_theme
-bindsym $mod+Shift+w exec rofi -show window $rofi_theme
+bindsym $mod1+Shift+d exec rofi -show run $rofi_theme
+bindsym $mod1+d exec rofi -show drun $rofi_theme
+bindsym $mod1+Shift+w exec rofi -show window $rofi_theme
 
 # Workspaces Settings
 #
@@ -113,112 +114,112 @@ assign [class="keepassxc"] $ws10
 assign [class="electron-ssr"] $ws10
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod1+1 workspace $ws1
+bindsym $mod1+2 workspace $ws2
+bindsym $mod1+3 workspace $ws3
+bindsym $mod1+4 workspace $ws4
+bindsym $mod1+5 workspace $ws5
+bindsym $mod1+6 workspace $ws6
+bindsym $mod1+7 workspace $ws7
+bindsym $mod1+8 workspace $ws8
+bindsym $mod1+9 workspace $ws9
+bindsym $mod1+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod1+Shift+1 move container to workspace $ws1
+bindsym $mod1+Shift+2 move container to workspace $ws2
+bindsym $mod1+Shift+3 move container to workspace $ws3
+bindsym $mod1+Shift+4 move container to workspace $ws4
+bindsym $mod1+Shift+5 move container to workspace $ws5
+bindsym $mod1+Shift+6 move container to workspace $ws6
+bindsym $mod1+Shift+7 move container to workspace $ws7
+bindsym $mod1+Shift+8 move container to workspace $ws8
+bindsym $mod1+Shift+9 move container to workspace $ws9
+bindsym $mod1+Shift+0 move container to workspace $ws10
 
 # Switch in recent workspaces
-bindsym $mod+Escape workspace back_and_forth
+bindsym $mod1+Escape workspace back_and_forth
 # Goto urgent window
-bindsym $mod+Shift+Escape [urgent="latest"] focus
+bindsym $mod1+Shift+Escape [urgent="latest"] focus
 # Switching between workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace previous
+bindsym $mod1+Tab workspace next
+bindsym $mod1+Shift+Tab workspace previous
 
 # Key Bindings
 #
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod1+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
-bindsym $mod+F4 kill
+bindsym $mod1+Shift+q kill
+bindsym $mod1+F4 kill
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod1+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec exitx
-#bindsym $mod+Shift+x exec i3lock --color "$base01"
-bindsym $mod+x exec i3lock-wrapper
-bindsym $mod+Shift+x exec "i3lock-wrapper; sleep 1; xset dpms force off"
+#bindsym $mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod1+Shift+e exec exitx
+#bindsym $mod1+Shift+x exec i3lock --color "$base01"
+bindsym $mod1+x exec i3lock-wrapper
+bindsym $mod1+Shift+x exec "i3lock-wrapper; sleep 1; xset dpms force off"
 bindsym Control+F12 exec xset dpms force off
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod1+h focus left
+bindsym $mod1+j focus down
+bindsym $mod1+k focus up
+bindsym $mod1+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod1+Left focus left
+bindsym $mod1+Down focus down
+bindsym $mod1+Up focus up
+bindsym $mod1+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod1+Shift+h move left
+bindsym $mod1+Shift+j move down
+bindsym $mod1+Shift+k move up
+bindsym $mod1+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod1+Shift+Left move left
+bindsym $mod1+Shift+Down move down
+bindsym $mod1+Shift+Up move up
+bindsym $mod1+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+i split h
+bindsym $mod1+i split h
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod1+v split v
 # split orientation toggle
-bindsym $mod+t split toggle
+bindsym $mod1+t split toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod1+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod1+s layout stacking
+bindsym $mod1+w layout tabbed
+bindsym $mod1+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod1+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod1+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod1+a focus parent
 # focus the child container
-bindsym $mod+c focus child
+bindsym $mod1+c focus child
 
 # Modes Settings
 #
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod1+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -237,13 +238,13 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # back to normal: Enter or Escape or $mod1+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod1+r mode "default"
 }
 
-bindsym $mod+Control+v mode "volume"
+bindsym $mod1+Control+v mode "volume"
 mode "volume" {
     # key bindings for volume mode
     # Pulse Audio controls
@@ -259,10 +260,10 @@ mode "volume" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+Control+v mode "default"
+    bindsym $mod1+Control+v mode "default"
 }
 
-bindsym $mod+p mode "screenshot"
+bindsym $mod1+p mode "screenshot"
 mode "screenshot" {
         # key bindings for screenshot mode
 
@@ -272,7 +273,7 @@ mode "screenshot" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+p mode "default"
+        bindsym $mod1+p mode "default"
 }
 
 # Widow Colours
@@ -305,7 +306,7 @@ bar {
               urgent_workspace   $base01 $base01    $base08
         }
 }
-#bindsym $mod+b bar hidden_state toggle
+#bindsym $mod1+b bar hidden_state toggle
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Key indicator for i3blocks
