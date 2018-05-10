@@ -243,6 +243,25 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+bindsym $mod+Control+v mode "volume"
+mode "volume" {
+    # key bindings for volume mode
+    # Pulse Audio controls
+    bindsym Space exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+    bindsym k exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+    bindsym j exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+    bindsym Shift+k exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
+    bindsym Shift+j exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
+    bindsym l exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
+    bindsym h exec --no-startup-id pactl set-sink-volume 0 -10% #decrease sound volume
+    bindsym Control+k exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
+    bindsym Control+j exec --no-startup-id pactl set-sink-volume 0 -10% #decrease sound volume
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Control+v mode "default"
+}
+
 bindsym $mod+p mode "screenshot"
 mode "screenshot" {
         # key bindings for screenshot mode
