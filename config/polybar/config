@@ -59,7 +59,7 @@ modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth tempe
 tray-position = right
 tray-padding = 2
 ; tray-transparent = true
-; tray-background = #0063ff
+tray-background = #333
 
 ; wm-restack = bspwm
 wm-restack = i3
