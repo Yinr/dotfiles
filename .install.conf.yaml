@@ -1,0 +1,20 @@
+- defaults:
+    link:
+        create: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/:
+        glob: true
+        path: config/*
+    ~/.config/variety/variety.conf:
+        path: variety.conf
+        force: true
+    # ~/.config/electron-ssr/gui-config.json:
+    #     path: electron-ssr-gui-config.json
+
+- shell:
+    - [mkdir -p ~/.config/electron-ssr, Making ElectronSSR dir]
+    - [test -e ~/.config/electron-ssr/gui-config.json || cp electronssr-gui-config.json ~/.config/electron-ssr/gui-config.json, Copying ElectronSSR config]
+    - [git submodule update --init --recursive, Installing submodules]
