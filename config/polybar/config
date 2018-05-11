@@ -8,57 +8,57 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+foreground-alt = #999
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
+[bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius-bottom = 6.0
 fixed-center = false
 
-background = ${colors.background}
+background = #cc222222
+; background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
 
-border-size = 1
+border-size = 2
+border-top-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 2
+padding-right = 1
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin = 1
 
 font-0 = fixed:pixelsize=10;1
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-1 = "Noto Sans CJK SC:fontformat=truetype:size=8:antialias=false;0"
-;font-2 = siji:pixelsize=10;1
-font-2 = "Font Awesome 5 Free:pixelsize=10;1"
+font-1 = hack:fontformat=truetype:size=8:antialias=false;1
+font-2 = "Font Awesome 5 Brands:size=10;2"
+font-3 = "Font Awesome 5 Free Regular:size=10;2"
+font-4 = "Font Awesome 5 Free Solid:size=10;2"
 
-modules-left = bspwm i3
-modules-center =
-;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight volume memory cpu wlan eth battery temperature date powermenu
+locale = zh_CN.UTF-8
+
+modules-left = powermenu i3 mpd
+modules-center = date
+modules-right = filesystem volume xkeyboard memory cpu wlan eth temperature battery
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
+; tray-transparent = true
+; tray-background = #0063ff
 
-;wm-restack = bspwm
+; wm-restack = bspwm
 wm-restack = i3
 
 ;override-redirect = true
@@ -66,11 +66,11 @@ wm-restack = i3
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+; scroll-up = i3wm-wsnext
+; scroll-down = i3wm-wsprev
 
 cursor-click = pointer
-cursor-scroll = ns-resize
+; cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
@@ -80,7 +80,9 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format = <label-indicator>
+; format-prefix = " "
+format-prefix-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
@@ -94,11 +96,20 @@ label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 30
 
 mount-0 = /
 
+format-mounted = <label-mounted>
+format-mounted-prefix = " "
+format-mounted-foreground = ${colors.foreground-alt}
+
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+
+format-unmounted = <label-unmounted>
+format-unmounted-prefix = " "
+format-unmounted-foreground = ${colors.foreground-alt}
+
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -142,29 +153,42 @@ label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+fuzzy-match = true
+ws-icon-0 = 1:;
+ws-icon-1 = 2:;
+ws-icon-2 = 3:;
+ws-icon-3 = 4:;
+ws-icon-4 = 5:;
+ws-icon-5 = 6:;
+ws-icon-6 = 7:;
+ws-icon-7 = 8:;
+ws-icon-8 = 9:;
+ws-icon-9 = 10:;
+ws-icon-default = 
 
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -172,8 +196,15 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
+; format = <label> <bar>
 format = <label> <bar>
-label = BL
+label = 
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
 
 bar-width = 10
 bar-indicator = |
@@ -194,18 +225,40 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format = <ramp-load>
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
 
+ramp-load-0 = ▁
+ramp-load-1 = ▂
+ramp-load-2 = ▃
+ramp-load-3 = ▄
+ramp-load-4 = ▅
+ramp-load-5 = ▆
+ramp-load-6 = ▇
+ramp-load-7 = █
+
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format = <ramp-used>
+format-prefix = " "
+format-prefix-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
+
+; Only applies if <ramp-used> is used
+ramp-used-0 = ▁
+ramp-used-1 = ▂
+ramp-used-2 = ▃
+ramp-used-3 = ▄
+ramp-used-4 = ▅
+ramp-used-5 = ▆
+ramp-used-6 = ▇
+ramp-used-7 = █
 
 [module/wlan]
 type = internal/network
@@ -213,6 +266,8 @@ interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
@@ -222,11 +277,17 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+; ramp-signal-0 = 
+; ramp-signal-1 = 
+; ramp-signal-2 = 
+; ramp-signal-3 = 
+; ramp-signal-4 = 
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -235,7 +296,7 @@ interface = enp2s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -247,30 +308,34 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date =
-date-alt = " %Y-%m-%d %a"
+date-alt = %Y-%m-%d %a
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #660a6cf5
 
 label = %date% %time%
 
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <ramp-volume> <bar-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted = " "
+format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -293,26 +358,31 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 98
+full-at = 99
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.foreground-alt}
 format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full =
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+label-full = 
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+label-charging = %percentage%%
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -330,9 +400,11 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
@@ -342,27 +414,52 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = 
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+; reboot into Win10
+menu-0-0 = 
+menu-0-0-exec = menu-open-3
+; reboot
+menu-0-1 = 
+menu-0-1-exec = menu-open-1
+; power off
+menu-0-2 = 
+menu-0-2-exec = menu-open-2
 
-menu-1-0 = cancel
+; cancel
+menu-3-0 = 
+menu-3-0-exec = menu-open-0
+; nop
+menu-3-1 = "  "
+menu-3-1-exec = menu-open-3
+; reboot into Win10
+menu-3-2 = 
+menu-3-2-exec = /home/yinr/Documents/Win10/Win10
+
+; cancel
+menu-1-0 = 
 menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+; nop
+menu-1-1 = "  "
+menu-1-1-exec = menu-open-1
+; reboot
+menu-1-2 = 
+menu-1-2-exec = sudo reboot
 
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+; cancel
+menu-2-0 = 
+menu-2-0-exec = menu-open-0
+; power off
+menu-2-1 = 
+menu-2-1-exec = sudo poweroff
+; nop
+menu-2-2 = "  "
+menu-2-2-exec = menu-open-2
 
 [settings]
 screenchange-reload = true
