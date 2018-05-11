@@ -16,6 +16,9 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+;=====================================================
+; bar/main
+;=====================================================
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -72,10 +75,16 @@ wm-restack = i3
 cursor-click = pointer
 ; cursor-scroll = ns-resize
 
+;=====================================================
+; module/xwindow
+;=====================================================
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
 
+;=====================================================
+; module/xkeyboard
+;=====================================================
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -94,6 +103,9 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
+;=====================================================
+; module/filesystem
+;=====================================================
 [module/filesystem]
 type = internal/fs
 interval = 30
@@ -113,6 +125,9 @@ format-unmounted-foreground = ${colors.foreground-alt}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+;=====================================================
+; module/bspwm
+;=====================================================
 [module/bspwm]
 type = internal/bspwm
 
@@ -132,6 +147,9 @@ label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
+;=====================================================
+; module/i3
+;=====================================================
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -180,6 +198,9 @@ ws-icon-8 = 9:;
 ws-icon-9 = 10:;
 ws-icon-default = 
 
+;=====================================================
+; module/mpd
+;=====================================================
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -193,6 +214,9 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
+;=====================================================
+; module/xbacklight
+;=====================================================
 [module/xbacklight]
 type = internal/xbacklight
 
@@ -225,11 +249,17 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
+;=====================================================
+; module/backlight-acpi
+;=====================================================
 [module/backlight-acpi]
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
+;=====================================================
+; module/cpu
+;=====================================================
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -248,6 +278,9 @@ ramp-load-5 = ▆
 ramp-load-6 = ▇
 ramp-load-7 = █
 
+;=====================================================
+; module/memory
+;=====================================================
 [module/memory]
 type = internal/memory
 interval = 2
@@ -268,6 +301,9 @@ ramp-used-5 = ▆
 ramp-used-6 = ▇
 ramp-used-7 = █
 
+;=====================================================
+; module/wlan
+;=====================================================
 [module/wlan]
 type = internal/network
 interface = wlp1s0
@@ -298,6 +334,9 @@ ramp-signal-4 = 😃
 ramp-signal-5 = 😈
 ramp-signal-foreground = ${colors.foreground-alt}
 
+;=====================================================
+; module/eth
+;=====================================================
 [module/eth]
 type = internal/network
 interface = enp2s0
@@ -314,6 +353,9 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+;=====================================================
+; module/date
+;=====================================================
 [module/date]
 type = internal/date
 interval = 1
@@ -330,6 +372,9 @@ format-underline = #660a6cf5
 
 label = %date% %time%
 
+;=====================================================
+; module/volume
+;=====================================================
 [module/volume]
 type = internal/volume
 
@@ -362,6 +407,9 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+;=====================================================
+; module/battery
+;=====================================================
 [module/battery]
 type = internal/battery
 battery = BAT1
@@ -394,6 +442,9 @@ animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
+;=====================================================
+; module/temperature
+;=====================================================
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -415,6 +466,9 @@ ramp-3 = 
 ramp-4 = 
 ramp-foreground = ${colors.foreground-alt}
 
+;=====================================================
+; module/powermenu
+;=====================================================
 [module/powermenu]
 type = custom/menu
 
@@ -469,6 +523,9 @@ menu-2-1-exec = sudo poweroff
 menu-2-2 = "  "
 menu-2-2-exec = menu-open-2
 
+;=====================================================
+; settings
+;=====================================================
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -476,6 +533,9 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 
+;=====================================================
+; global/wm
+;=====================================================
 [global/wm]
 margin-top = 5
 margin-bottom = 5
