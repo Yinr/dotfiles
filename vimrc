@@ -585,7 +585,7 @@ endif
 
 " 设置代码配色方案
 set background=dark
-colorscheme base16-tomorrow-night
+colorscheme default
 if g:isGUI
     " colorscheme base16-default-dark
     " colorscheme manuscript
