@@ -46,13 +46,14 @@ module-margin = 1
 
 font-0 = fixed:pixelsize=10;1
 font-1 = hack:fontformat=truetype:size=8:antialias=false;1
-font-2 = "Font Awesome 5 Brands:size=10;2"
-font-3 = "Font Awesome 5 Free Regular:size=10;2"
-font-4 = "Font Awesome 5 Free Solid:size=10;2"
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Font Awesome 5 Free Regular:size=10;2
+font-4 = Font Awesome 5 Free Solid:size=10;2
+font-5 = Weather Icons:size=12;1
 
 locale = zh_CN.UTF-8
 
-modules-left = powermenu i3
+modules-left = powermenu i3 info-weather
 modules-center = date
 modules-right = filesystem xbacklight volume xkeyboard memory cpu info-pkg-update wlan eth temperature battery
 
@@ -564,5 +565,14 @@ format-underline = #1793d1
 ; click-left = i3-sensible-terminal pacman -Syu
 click-left = i3-sensible-terminal -- yaourt -Syua &
 click-right = i3-sensible-terminal -- yaourt -Syua --noconfirm &
+
+;=====================================================
+; module/info-weather: openweathermap-fullfeatured
+;=====================================================
+[module/info-weather]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 6
 
 ; vim:ft=dosini
