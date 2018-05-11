@@ -1,3 +1,6 @@
+# dotfile private
+private.conf
+
 # vim
 vim/swapfiles
 vim/undofiles

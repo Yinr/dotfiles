@@ -1,5 +1,10 @@
 #!/bin/sh
 
+private_conf_path="$HOME/.config/dotfile-private/private.conf"
+if [[ -f "$private_conf_path" ]]; then
+    source "$private_conf_path"
+fi
+
 get_icon() {
     case $1 in
         01d) icon="";;
@@ -35,7 +40,7 @@ get_duration() {
 
 }
 
-KEY=""
+KEY="$DOTFILE_OPENWEATHER_APPID"
 CITY=""
 UNITS="metric"
 SYMBOL="°"
