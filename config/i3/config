@@ -353,7 +353,7 @@ exec --no-startup-id nm-applet
 # blueman for bluetooth
 exec --no-startup-id blueman-applet
 # dunst for notification
-exec --no-startup-id dunst
+exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 
 exec --no-startup-id /opt/electron-ssr-source/electron-ssr
 exec --no-startup-id fcitx-autostart
