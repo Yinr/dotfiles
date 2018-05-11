@@ -1,0 +1,8 @@
+[push]
+	default = simple
+[user]
+	email = yinr@yinr.cc
+	name = Yinr
+[core]
+	editor = vim
+	autocrlf = input

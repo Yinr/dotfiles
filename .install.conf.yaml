@@ -5,6 +5,8 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.tmux.conf:
+    ~/.gitconfig:
     ~/.config/:
         glob: true
         path: config/*
