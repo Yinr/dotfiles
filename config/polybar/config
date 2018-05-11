@@ -51,7 +51,7 @@ locale = zh_CN.UTF-8
 
 modules-left = powermenu i3 mpd
 modules-center = date
-modules-right = filesystem volume xkeyboard memory cpu wlan eth temperature battery
+modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth temperature battery
 
 tray-position = right
 tray-padding = 2
@@ -196,15 +196,23 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-; format = <label> <bar>
-format = <label> <bar>
+format = <label> <ramp>
 label = 
 
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+; ramp-0 = 🌕
+; ramp-1 = 🌔
+; ramp-2 = 🌓
+; ramp-3 = 🌒
+; ramp-4 = 🌑
+ramp-0 = " "
+ramp-1 = ▁
+ramp-2 = ▂
+ramp-3 = ▃
+ramp-4 = ▄
+ramp-5 = ▅
+ramp-6 = ▆
+ramp-7 = ▇
+ramp-8 = █
 
 bar-width = 10
 bar-indicator = |
