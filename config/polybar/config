@@ -572,6 +572,7 @@ click-right = i3-sensible-terminal -- yaourt -Syua --noconfirm &
 [module/info-weather]
 type = custom/script
 exec = ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
+exec-if = test -x ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
 interval = 600
 label-font = 6
 
