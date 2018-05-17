@@ -562,7 +562,7 @@ nmap Y y$
 set number                                            "显示行号
 set ruler                                             "显示光标当前位置 
 set laststatus=2                                      "启用状态栏信息
-set cmdheight=2                                       "设置命令行的高度为2，默认为1
+set cmdheight=1                                       "设置命令行的高度为2，默认为1
 set cursorline                                        "突出显示当前行
 " set cursorcolumn                                      "突出显示当前列
 " set guifont=YaHei_Consolas_Hybrid:h10                 "设置字体:字号（字体名称空格用下划线代替）
