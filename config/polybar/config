@@ -53,7 +53,7 @@ locale = zh_CN.UTF-8
 
 modules-left = powermenu i3 info-weather
 modules-center = date
-modules-right = filesystem xbacklight volume xkeyboard memory cpu info-pkg-update wlan eth temperature battery
+modules-right = filesystem xbacklight volume xkeyboard touchpad memory cpu info-pkg-update wlan eth temperature battery
 
 tray-position = right
 tray-padding = 2
@@ -594,5 +594,25 @@ exec = ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
 exec-if = test -x ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
 interval = 600
 label-font = 4
+
+;=====================================================
+; module/touchpad
+;=====================================================
+[module/touchpad]
+type = custom/script
+exec = ~/.config/i3/touchpad.sh status | sed 's/off//'
+exec-if = test -x "$HOME/.config/i3/touchpad.sh"
+interval = 5
+label = "ﳶ"
+label-font = 3
+label-foreground = ${colors.foreground-alt}
+format = <label>
+format-underline = #c0c0c0
+; format-prefix = "ﳶ "
+format-prefix-font = 3
+format-prefix-foreground = ${colors.foreground-alt}
+
+click-left = ~/.config/i3/touchpad.sh toggle
+
 
 ; vim:ft=dosini
