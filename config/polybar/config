@@ -46,11 +46,8 @@ module-margin = 1
 
 font-0 = fixed:pixelsize=10;1
 font-1 = hack:fontformat=truetype:size=8:antialias=false;1
-font-2 = Font Awesome 5 Brands:size=10;2
-font-3 = Font Awesome 5 Free Regular:size=10;2
-font-4 = Font Awesome 5 Free Solid:size=10;2
-font-5 = Weather Icons:size=12;1
-font-6 = siji:size=10;1
+font-2 = hack nerd font:size=10.5;1
+font-3 = Weather Icons:size=11;1
 
 locale = zh_CN.UTF-8
 
@@ -116,12 +113,14 @@ mount-0 = /
 
 format-mounted = <label-mounted>
 format-mounted-prefix = " "
+format-mounted-prefix-font = 3
 format-mounted-foreground = ${colors.foreground-alt}
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 
 format-unmounted = <label-unmounted>
 format-unmounted-prefix = " "
+format-unmounted-prefix-font = 3
 format-unmounted-foreground = ${colors.foreground-alt}
 
 label-unmounted = %mountpoint% not mounted
@@ -207,6 +206,7 @@ ws-icon-default = 
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online-font = 3
 
 icon-prev = 
 icon-stop = 
@@ -223,8 +223,11 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <ramp>
-label = 
+format = <ramp>
+format-prefix = " "
+format-prefix-font = 3
+format-prefix-foreground = ${colors.foreground-alt}
+label = 
 
 ; ramp-0 = 🌕
 ; ramp-1 = 🌔
@@ -268,6 +271,7 @@ type = internal/cpu
 interval = 2
 format = <ramp-load>
 format-prefix = " "
+format-prefix-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -313,7 +317,8 @@ interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-prefix = " "
+; format-connected-prefix = "直 "
+format-connected-prefix-font = 3
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = #9f78e1
 label-connected = %essid%
@@ -329,12 +334,13 @@ format-disconnected =
 ; ramp-signal-2 = 
 ; ramp-signal-3 = 
 ; ramp-signal-4 = 
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
+ramp-signal-0 = "直 "
+ramp-signal-0-foreground = #F54D37
+ramp-signal-1 = "直 "
+ramp-signal-1-foreground = #E8C040
+ramp-signal-2 = "直 "
+ramp-signal-2-foreground = #56F54B
+ramp-signal-font = 3
 ramp-signal-foreground = ${colors.foreground-alt}
 
 ;=====================================================
@@ -347,6 +353,7 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
+format-connected-prefix-font = 3
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -370,6 +377,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = " "
+format-prefix-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #660a6cf5
 
@@ -383,13 +391,17 @@ type = internal/pulseaudio
 
 sink =
 
-format-volume = <ramp-volume> <bar-volume>
+format-volume = <bar-volume>
+format-volume-prefix = "墳 "
+format-volume-prefix-font = 3
+format-volume-prefix-foreground = ${colors.foreground-alt}
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
 format-muted = <label-muted>
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-prefix = "ﱝ "
+format-muted-prefix-font = 3
+format-muted-prefix-foreground = ${colors.foreground-alt}
 label-muted = Muted
 
 ramp-volume-0 = 
@@ -423,13 +435,16 @@ full-at = 99
 
 format-charging = <label-charging>
 format-charging-prefix = " "
+format-charging-prefix-font = 3
 format-charging-prefix-foreground = ${colors.foreground-alt}
 format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-prefix-font = 3
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full =
+format-full-prefix-font = 3
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -561,7 +576,8 @@ exec = checkupdates | wc -l | sed 's/^0$/\n/'
 interval = 30
 
 format = <label>
-format-prefix = " "
+format-prefix = " "
+format-prefix-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #1793d1
 
@@ -577,6 +593,6 @@ type = custom/script
 exec = ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
 exec-if = test -x ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
 interval = 600
-label-font = 6
+label-font = 4
 
 ; vim:ft=dosini
