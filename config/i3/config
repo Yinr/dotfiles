@@ -95,8 +95,8 @@ set $ws1 "1: Terminal "
 set $ws2 "2: Browser "
 set $ws3 "3: Editor "
 set $ws4 "4: Maths "
-set $ws5 "5: "
-set $ws6 "6: "
+set $ws5 "5: "
+set $ws6 "6: "
 set $ws7 "7: Fun "
 set $ws8 "8: Chat "
 set $ws9 "9: VM "
@@ -105,6 +105,7 @@ set $ws10 "10: Background "
 assign [class="Firefox"] $ws2
 assign [class="Atom"] $ws3
 assign [class="GeoGebra"] $ws4
+assign [class="Gnome-calendar"] $ws5
 assign [class="Steam"] $ws7
 assign [class="TelegramDesktop"] $ws8
 assign [class="VirtualBox Manager"] $ws9
