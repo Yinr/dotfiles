@@ -84,8 +84,7 @@ hide_edge_borders both
 # bindsym $mod1+d exec --no-startup-id i3-dmenu-desktop
 set $rofi_theme -lines 5 -eh 2 -columns 2 -font 'Noto Sans CJK SC 14' -opacity 80 -theme Arc-Dark
 #set $rofi_theme -lines 5 -eh 2 -columns 2 -font 'Noto Sans CJK SC 14' -width 100 -padding 400 -opacity '80' -show-icons -bw 0 -bc '$base01' -bg '$base02' -fg '$base07' -hlbg '$base05' -hlfg '#9575cd'
-bindsym $mod1+Shift+d exec rofi -show run $rofi_theme
-bindsym $mod1+d exec rofi -show drun $rofi_theme
+bindsym $mod1+d exec "rofi -modi combi,window -show combi -combi-modi drun,run $rofi_theme"
 bindsym $mod1+Shift+w exec rofi -show window $rofi_theme
 
 # Workspaces Settings
