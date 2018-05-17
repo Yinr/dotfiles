@@ -142,7 +142,7 @@ bindsym $mod1+Escape workspace back_and_forth
 bindsym $mod1+Shift+Escape [urgent="latest"] focus
 # Switching between workspaces
 bindsym $mod1+Tab workspace next
-bindsym $mod1+Shift+Tab workspace previous
+bindsym $mod1+Shift+Tab workspace prev
 
 # Key Bindings
 #
