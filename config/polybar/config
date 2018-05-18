@@ -53,7 +53,7 @@ locale = zh_CN.UTF-8
 
 modules-left = powermenu i3 info-weather
 modules-center = date
-modules-right = filesystem xbacklight volume xkeyboard touchpad memory cpu info-pkg-update wlan eth temperature battery
+modules-right = filesystem volume xkeyboard touchpad memory cpu info-pkg-update wlan eth temperature battery
 
 tray-position = right
 tray-padding = 2
