@@ -330,7 +330,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 
 exec --no-startup-id /opt/electron-ssr-source/electron-ssr
-exec --no-startup-id indicator-kdeconnect
+exec --no-startup-id mconnect -d
 exec --no-startup-id fcitx-autostart
 exec --no-startup-id variety
 exec --no-startup-id keepassxc
