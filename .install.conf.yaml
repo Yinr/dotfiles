@@ -19,6 +19,7 @@
     #     path: electron-ssr-gui-config.json
 
 - shell:
+    - [test -e ~/.config/dotfile-private/private.conf || install -m640 ~/.config/dotfile-private/private.example.conf ~/.config/dotfile-private/private.conf, Copying dotfile private config]
     - [mkdir -p ~/.config/electron-ssr, Making ElectronSSR dir]
     - [test -e ~/.config/electron-ssr/gui-config.json || cp electronssr-gui-config.json ~/.config/electron-ssr/gui-config.json, Copying ElectronSSR config]
     - [git submodule update --init --recursive, Installing submodules]
