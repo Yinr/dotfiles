@@ -164,7 +164,7 @@ bindsym $mod1+Shift+e exec exitx
 #bindsym $mod1+Shift+x exec i3lock --color "$base01"
 bindsym $mod1+x exec i3lock-wrapper
 bindsym $mod1+Shift+x exec "i3lock-wrapper; sleep 1; xset dpms force off"
-bindsym Control+F12 exec xset dpms force off
+bindsym Control+F12 exec "sleep 1; xset dpms force off"
 
 # change focus
 bindsym $mod1+h focus left
@@ -330,8 +330,8 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 
 exec --no-startup-id /opt/electron-ssr-source/electron-ssr
-exec --no-startup-id mconnect -d
 exec --no-startup-id fcitx-autostart
+exec --no-startup-id mconnect -d
 exec --no-startup-id variety
 exec --no-startup-id keepassxc
 exec --no-startup-id syncthing -no-browser
