@@ -562,7 +562,7 @@ margin-bottom = 5
 ;=====================================================
 [module/info-pkg-update]
 type = custom/script
-exec = checkupdates | wc -l | sed 's/^0$/\n/'
+exec = checkupdates 2> /dev/null | wc -l | sed 's/^0$/\n/'
 interval = 30
 
 format = <label>
