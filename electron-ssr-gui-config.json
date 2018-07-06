@@ -11,6 +11,10 @@
 	"serverSubscribes": [
 		{
 			"Group": "SSRSHARE.COM",
+			"URL": "https://ssrshare.xyz/freessr/"
+		},
+		{
+			"Group": "SSRSHARE.COM",
 			"URL": "https://yzzz.ml/freessr/"
 		},
 		{
