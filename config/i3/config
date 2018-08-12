@@ -335,5 +335,4 @@ exec --no-startup-id mconnect -d
 exec --no-startup-id redshift
 exec --no-startup-id variety
 exec --no-startup-id keepassxc
-exec --no-startup-id syncthing -no-browser
 exec --no-startup-id telegram-desktop -startintray
