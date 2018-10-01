@@ -95,12 +95,13 @@ set $ws1 "1: Terminal "
 set $ws2 "2: Browser "
 set $ws3 "3: Editor "
 set $ws4 "4: Maths "
-set $ws5 "5: "
-set $ws6 "6: "
+set $ws5 "5: Computer "
+set $ws6 "6: File "
 set $ws7 "7: Fun "
 set $ws8 "8: Chat "
 set $ws9 "9: VM "
-set $ws10 "10: Background "
+set $ws10 "10: Others "
+set $wsb "99: Background "
 
 assign [class="Firefox"] $ws2
 assign [class="Atom"] $ws3
@@ -124,6 +125,7 @@ bindsym $mod1+7 workspace $ws7
 bindsym $mod1+8 workspace $ws8
 bindsym $mod1+9 workspace $ws9
 bindsym $mod1+0 workspace $ws10
+bindsym $mod1+b workspace $wsb
 
 # move focused container to workspace
 bindsym $mod1+Shift+1 move container to workspace $ws1
@@ -136,6 +138,7 @@ bindsym $mod1+Shift+7 move container to workspace $ws7
 bindsym $mod1+Shift+8 move container to workspace $ws8
 bindsym $mod1+Shift+9 move container to workspace $ws9
 bindsym $mod1+Shift+0 move container to workspace $ws10
+bindsym $mod1+Shift+b move container to workspace $wsb
 
 # Switch in recent workspaces
 bindsym $mod1+Escape workspace back_and_forth
@@ -149,6 +152,7 @@ bindsym $mod1+Shift+Tab workspace prev
 #
 # start a terminal
 bindsym $mod1+Return exec i3-sensible-terminal
+bindsym $mod1+Shift+Return workspace $ws1, exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod1+Shift+q kill
