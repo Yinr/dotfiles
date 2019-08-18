@@ -21,6 +21,8 @@ alert = #bd2c40
 ;=====================================================
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
+; xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor-fallback = eDP1
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -45,7 +47,7 @@ padding-right = 1
 module-margin = 1
 
 font-0 = fixed:pixelsize=10;1
-font-1 = hack:fontformat=truetype:size=8:antialias=false;1
+font-1 = hack:fontformat=truetype:size=12:antialias=false;1
 font-2 = hack nerd font:size=10.5;1
 font-3 = Weather Icons:size=11;1
 
@@ -53,7 +55,7 @@ locale = zh_CN.UTF-8
 
 modules-left = powermenu i3 info-weather
 modules-center = date
-modules-right = filesystem volume xkeyboard touchpad memory cpu info-pkg-update wlan temperature battery
+modules-right = filesystem backlight volume xkeyboard touchpad memory cpu info-pkg-update wlan temperature battery
 
 tray-position = right
 tray-padding = 2
@@ -110,16 +112,17 @@ type = internal/fs
 interval = 30
 
 mount-0 = /
+mount-1 = /home
 
 format-mounted = <label-mounted>
-format-mounted-prefix = " "
+format-mounted-prefix = " "
 format-mounted-prefix-font = 3
 format-mounted-foreground = ${colors.foreground-alt}
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 
 format-unmounted = <label-unmounted>
-format-unmounted-prefix = " "
+format-unmounted-prefix = " "
 format-unmounted-prefix-font = 3
 format-unmounted-foreground = ${colors.foreground-alt}
 
@@ -167,23 +170,27 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
+label-focused-font = 3
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
+label-unfocused-font = 3
 label-unfocused-background = ${colors.background}
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
+label-visible-font = 3
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
+label-urgent-font = 3
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
@@ -283,7 +290,9 @@ ramp-load-3 = ▄
 ramp-load-4 = ▅
 ramp-load-5 = ▆
 ramp-load-6 = ▇
+ramp-load-6-foreground = #ff5555
 ramp-load-7 = █
+ramp-load-7-foreground = #ff5555
 
 ;=====================================================
 ; module/memory
@@ -306,14 +315,16 @@ ramp-used-3 = ▄
 ramp-used-4 = ▅
 ramp-used-5 = ▆
 ramp-used-6 = ▇
+ramp-used-6-foreground = #ff5555
 ramp-used-7 = █
+ramp-used-7-foreground = #ff5555
 
 ;=====================================================
 ; module/wlan
 ;=====================================================
 [module/wlan]
 type = internal/network
-interface = wlp1s0
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -370,7 +381,7 @@ format-disconnected =
 type = internal/date
 interval = 1
 
-date =
+date = " %m-%d %a"
 date-alt = " %Y-%m-%d %a"
 
 time = %H:%M
@@ -417,11 +428,11 @@ bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator-font = 3
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+bar-volume-fill-font = 3
 bar-volume-empty = ─
-bar-volume-empty-font = 2
+bar-volume-empty-font = 3
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 ;=====================================================
@@ -429,14 +440,14 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 ;=====================================================
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ADP1
+battery = BAT0
+adapter = AC
 full-at = 99
 
-format-charging = <label-charging>
-format-charging-prefix = " "
-format-charging-prefix-font = 3
-format-charging-prefix-foreground = ${colors.foreground-alt}
+format-charging = <animation-charging> <label-charging>
+#format-charging-prefix = " "
+#format-charging-prefix-font = 3
+#format-charging-prefix-foreground = ${colors.foreground-alt}
 format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -450,17 +461,22 @@ format-full-underline = ${self.format-charging-underline}
 
 label-full = 
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #ff5555
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #f5a70a
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 label-charging = %percentage%%
 animation-charging-0 = 
 animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-2 = 
+animation-charging-3 = 
 animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+animation-charging-framerate = 700
 
 ;=====================================================
 ; module/temperature
@@ -468,7 +484,8 @@ animation-charging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 80
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
 
 format = <ramp> <label>
 format-underline = #f50a4d
@@ -605,5 +622,17 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 click-left = ~/.config/i3/touchpad.sh toggle
 
+;=====================================================
+; module/backlight
+;=====================================================
+[module/backlight]
+inherit = module/xbacklight
+type = custom/script
+
+exec = xbacklight -get
+format = <label>
+label = %output%%
+scroll-up = xbacklight +5
+scroll-down = xbacklight -5
 
 ; vim:ft=dosini
