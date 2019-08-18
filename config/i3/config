@@ -74,6 +74,8 @@ smart_gaps on
 smart_borders on
 hide_edge_borders both
 
+default_orientation auto
+
 # Program Launcher
 #
 # start dmenu (a program launcher)
@@ -82,10 +84,8 @@ hide_edge_borders both
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod1+d exec --no-startup-id i3-dmenu-desktop
-set $rofi_theme -width 1024 -lines 8 -eh 2 -columns 2 -font 'Noto Sans CJK SC 14' -show-icons -theme Arc-Dark
-#set $rofi_theme -lines 5 -eh 2 -columns 2 -font 'Noto Sans CJK SC 14' -width 100 -padding 400 -opacity '80' -show-icons -bw 0 -bc '$base01' -bg '$base02' -fg '$base07' -hlbg '$base05' -hlfg '#9575cd'
-bindsym $mod1+d exec --no-startup-id "rofi -modi combi,window -show combi -combi-modi drun,run $rofi_theme"
-bindsym $mod1+Shift+w exec --no-startup-id rofi -show window $rofi_theme
+bindsym $mod1+d exec --no-startup-id rofi -show combi
+bindsym $mod1+Shift+w exec --no-startup-id rofi -show window
 
 # Workspaces Settings
 #
@@ -103,16 +103,18 @@ set $ws9 "9: VM "
 set $ws10 "10: Others "
 set $wsb "99: Background "
 
-assign [class="Firefox"] $ws2
+#assign [class="Firefox"] $ws2
 assign [class="Atom"] $ws3
 assign [class="GeoGebra"] $ws4
 assign [class="Gnome-calendar"] $ws5
 assign [class="Steam"] $ws7
 assign [class="TelegramDesktop"] $ws8
-assign [class="VirtualBox Manager"] $ws9
-assign [class="VirtualBox Machine"] $ws9
+assign [instance="wechat.exe"] $ws8
+assign [class="VirtualBox"] $ws9
 assign [class="keepassxc"] $ws10
 assign [class="electron-ssr"] $ws10
+
+for_window [class="Variety"] floating enable
 
 # switch to workspace
 bindsym $mod1+1 workspace $ws1
@@ -153,6 +155,14 @@ bindsym $mod1+Shift+Tab workspace prev
 # start a terminal
 bindsym $mod1+Return exec i3-sensible-terminal
 bindsym $mod1+Shift+Return workspace $ws1, exec i3-sensible-terminal
+
+# start a browser
+bindsym $mod1+i exec firefox
+bindsym $mod1+Shift+i workspace $ws2, exec firefox
+
+# start a file manager
+bindsym $mod1+g exec caja
+bindsym $mod1+Shift+g workspace $ws5, exec caja
 
 # kill focused window
 bindsym $mod1+Shift+q kill
@@ -195,7 +205,7 @@ bindsym $mod1+Shift+Up move up
 bindsym $mod1+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod1+i split h
+bindsym $mod1+n split h
 # split in vertical orientation
 bindsym $mod1+v split v
 # split orientation toggle
@@ -280,16 +290,31 @@ mode "screenshot" {
         bindsym $mod1+$mod2+p mode "default"
 }
 
+bindsym $mod1+Shift+n mode "numpad"
+mode "numpad" {
+        # key bindings for screenshot mode
+
+        bindsym --release j exec --no-startup-id xdotool key --delay 0 1
+        bindsym --release k exec --no-startup-id xdotool key --delay 0 2
+        bindsym --release l exec --no-startup-id xdotool key --delay 0 3
+        bindsym --release u exec --no-startup-id xdotool key --delay 0 4
+        bindsym --release i exec --no-startup-id xdotool key --delay 0 5
+        bindsym --release o exec --no-startup-id xdotool key --delay 0 6
+        bindsym --release m exec --no-startup-id xdotool key --delay 0 0
+        bindsym --release p exec --no-startup-id xdotool key --delay 0 minus
+        bindsym --release semicolon exec --no-startup-id xdotool key --delay 0 asterisk
+        bindsym --release equal exec --no-startup-id xdotool key --delay 0 plus
+
+        bindsym Escape mode "default"
+        bindsym $mod1+Shift+n mode "default"
+}
+
 # Widow Colours
 #                         border  background text    indicator
   client.focused          $base01 $base01    $base07 $base0F
   client.focused_inactive $base02 $base02    $base03 $base0F
   client.unfocused        $base02 $base02    $base03 $base0F
   client.urgent           $base02 $base08    $base00 $base0F
-
-# Bar Settings
-#
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Other Settings
 #
@@ -299,17 +324,27 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 -steps 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 -steps 20 # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# bindsym XF86Search exec --no-startup-id search sth
+
+bindsym $mod1+p exec arandr
+
+# screenshot with flameshot
+#bindsym $mod1+p exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id flameshot gui
+bindsym Ctrl+Print exec --no-startup-id flameshot full -c -d 3
+bindsym Shift+Print exec --no-startup-id flameshot full -c
 
 # Set wallpaper (need to install feh)
 #exec_always feh --bg-scale /path_to_image_file
@@ -322,21 +357,32 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 #exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
 #
+# compton
+#
+exec --no-startup-id compton -b
+
+# Bar Settings
+#
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+#
 # Startup Programs
 #
-exec_always --no-startup-id compton -f
-
 # network manager applet for network manager
 exec --no-startup-id nm-applet
 # blueman for bluetooth
 exec --no-startup-id blueman-applet
 # dunst for notification
-exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
+exec --no-startup-id dunst
 
+exec --no-startup-id fcitx5
+exec --no-startup-id copyq
 exec --no-startup-id electron-ssr
-exec --no-startup-id fcitx-autostart
 exec --no-startup-id mconnect -d
 exec --no-startup-id redshift
 exec --no-startup-id variety
 exec --no-startup-id keepassxc
 exec --no-startup-id telegram-desktop -startintray
+exec --no-startup-id syncthing-gtk -m
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
