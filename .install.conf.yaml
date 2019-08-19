@@ -11,15 +11,22 @@
     ~/.gitconfig:
     ~/.config/:
         glob: true
+        relink: true
         path: config/*
     ~/.config/variety/variety.conf:
         path: variety.conf
         force: true
-    # ~/.config/electron-ssr/gui-config.json:
-    #     path: electron-ssr-gui-config.json
 
 - shell:
-    - [test -e ~/.config/dotfile-private/private.conf || install -m640 ~/.config/dotfile-private/private.example.conf ~/.config/dotfile-private/private.conf, Copying dotfile private config]
-    - [mkdir -p ~/.config/electron-ssr, Making ElectronSSR dir]
-    - [test -e ~/.config/electron-ssr/gui-config.json || cp electronssr-gui-config.json ~/.config/electron-ssr/gui-config.json, Copying ElectronSSR config]
-    - [git submodule update --init --recursive, Installing submodules]
+    -
+      description: Copying dotfile private config
+      command: test -e ~/.config/dotfile-private/private.conf || install -m640 ~/.config/dotfile-private/private.example.conf ~/.config/dotfile-private/private.conf
+    -
+      description: Making ElectronSSR dir
+      command: mkdir -p ~/.config/electron-ssr
+    -
+      description: Copying ElectronSSR config
+      command: test -e ~/.config/electron-ssr/gui-config.json || install -m644 essr-config.json ~/.config/electron-ssr/gui-config.json
+    -
+      description: Installing submodules
+      command: git submodule update --init --recursive
