@@ -6,6 +6,8 @@
 
 - link:
     ~/.vim:
+    ~/.zshrc:
+    ~/.shellrc:
     ~/.tmux.conf:
     ~/.gitconfig:
     ~/.config/:

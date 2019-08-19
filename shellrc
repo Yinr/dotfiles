@@ -1,0 +1,64 @@
+## settings for bash or zsh
+
+## Editor
+#export VISUAL="gvim"
+export EDITOR="vim"
+
+## Android emulator
+export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+
+## WeChall Warbox
+export WECHALLUSER="Yinr"
+export WECHALLTOKEN="84655-C5072-4BCEE-D07B7-5B1C6-5F8AE"
+
+## copy to X clipboard
+alias pbcopy="xclip -sel clip"
+alias pbpaste="xclip -o -sel clip"
+alias vi="vim"
+alias yinr_aria2c="aria2c -c -m0 -x256 -j256 -k1M"
+
+## create_ap
+WIFI_DEVICE='wlp3s0'
+ap-enable() {
+    sudo create_ap --config ~/apps/configs/ap-${1:-$WIFI_DEVICE}.conf
+}
+alias ap-enable-enp2s0='ap-enable enp2s0'
+alias ap-disable='sudo create_ap --stop $WIFI_DEVICE'
+alias ap-clients='create_ap --list-clients $WIFI_DEVICE'
+
+## the fuck
+## https://github.com/nvbn/thefuck
+eval $(thefuck --alias well)
+
+## noise generator
+## usage:
+##     play-noise whitenoise # to play white noise
+##     play-noise pinknoise # to play pink noise
+alias play-noise='play -n synth 60:00 '
+
+## xmr-stak, the BCN miner
+## usage:
+##     miner
+##     miner 9
+##     miner 7
+##     miner 5
+miner() {
+    bin_path="/home/yinr/apps/xmr-stak"
+
+    if [ -f "${bin_path}/config-${1}.txt" ]; then
+        cfg=${bin_path}/config-${1}.txt
+    else
+        cfg=${bin_path}/config.txt
+    fi
+
+    if [ -f "${bin_path}/cpu-${1}.txt" ]; then
+        cpu=${bin_path}/cpu-${1}.txt
+    else
+        cpu=${bin_path}/cpu.txt
+    fi
+
+    ${bin_path}/xmr-stak -c ${cfg} --cpu ${cpu}
+}
+
+## alias
+
