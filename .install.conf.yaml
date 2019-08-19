@@ -10,6 +10,10 @@
     ~/.shellrc:
     ~/.tmux.conf:
     ~/.gitconfig:
+    ~/.dmrc:
+    ~/.gtkrc-2.0:
+    ~/.Xmodmap:
+    ~/.xprofile:
     ~/.config/:
         glob: true
         relink: true
