@@ -290,7 +290,7 @@ ramp-load-3 = ▄
 ramp-load-4 = ▅
 ramp-load-5 = ▆
 ramp-load-6 = ▇
-ramp-load-6-foreground = #ff5555
+ramp-load-6-foreground = #f5a70a
 ramp-load-7 = █
 ramp-load-7-foreground = #ff5555
 
@@ -315,7 +315,7 @@ ramp-used-3 = ▄
 ramp-used-4 = ▅
 ramp-used-5 = ▆
 ramp-used-6 = ▇
-ramp-used-6-foreground = #ff5555
+ramp-used-6-foreground = #f5a70a
 ramp-used-7 = █
 ramp-used-7-foreground = #ff5555
 
