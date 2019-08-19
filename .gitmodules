@@ -4,3 +4,9 @@
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "config/oh-my-zsh.local/plugins/git-flow-completion"]
+	path = config/oh-my-zsh.local/plugins/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion
+[submodule "config/oh-my-zsh.local/plugins/zsh-syntax-highlighting"]
+	path = config/oh-my-zsh.local/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
