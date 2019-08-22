@@ -14,6 +14,7 @@
     ~/.gtkrc-2.0:
     ~/.Xmodmap:
     ~/.xprofile:
+    ~/.Xresources:
     ~/.config/:
         glob: true
         relink: true
