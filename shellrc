@@ -1,4 +1,10 @@
 ## settings for bash or zsh
+#
+# vim:ft=sh:ts=4:sw=4:expandtab:
+#
+
+## PATH
+PATH="$PATH:$HOME/.local/bin"
 
 ## Editor
 #export VISUAL="gvim"
@@ -61,4 +67,3 @@ miner() {
 }
 
 ## alias
-
