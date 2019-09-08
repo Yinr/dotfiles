@@ -105,6 +105,7 @@ set $wsb "99: Background "
 
 #assign [class="Firefox"] $ws2
 assign [class="Atom"] $ws3
+assign [class="code-oss"] $ws3
 assign [class="GeoGebra"] $ws4
 assign [class="Gnome-calendar"] $ws5
 assign [class="Steam"] $ws7
@@ -385,4 +386,3 @@ exec --no-startup-id keepassxc
 exec --no-startup-id telegram-desktop -startintray
 exec --no-startup-id syncthing-gtk -m
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
