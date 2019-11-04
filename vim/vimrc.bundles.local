@@ -1,0 +1,17 @@
+" Plug 'xml.vim'                         " 快速编写xml/html，如标签自动闭合等
+" Plug 'conque_shell'                    " 在vim中打开终端
+"Plug 'vimwiki'                         " 个人wiki 
+" Plug 'VOoM'                            " outline功能 need python
+Plug 'editorconfig/editorconfig-vim'
+Plug 'hotoo/pangu.vim'
+Plug 'ericpruitt/tmux.vim', {'rtp': 'vim'}
+" ====================
+" Color Scheme
+"Plug 'Color-Scheme-Explorer'           " 列出配色列表 
+" Plug 'chriskempson/base16-vim'
+" Plug 'manuscript'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'tomasr/molokai'
+" Plug 'phd'
+" ====================
+
