@@ -163,8 +163,9 @@ bindsym $mod1+i exec $browserExec
 bindsym $mod1+Shift+i workspace $ws2, exec $browserExec
 
 # start a file manager
-bindsym $mod1+g exec caja
-bindsym $mod1+Shift+g workspace $ws5, exec caja
+set $fmExec caja
+bindsym $mod1+g exec $fmExec
+bindsym $mod1+Shift+g workspace $ws5, exec $fmExec
 
 # kill focused window
 bindsym $mod1+Shift+q kill
