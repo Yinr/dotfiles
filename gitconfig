@@ -3,6 +3,7 @@
 [user]
 	email = yinr@yinr.cc
 	name = Yinr
+	signingkey = CA43A8ABD8F6C1DA
 [core]
 	editor = vim
 	autocrlf = input
