@@ -180,7 +180,7 @@ bindsym $mod1+Shift+r restart
 bindsym $mod1+Shift+e exec exitx
 #bindsym $mod1+Shift+x exec i3lock --color "$base01"
 bindsym $mod1+x exec i3lock-wrapper
-bindsym $mod1+Shift+x exec "i3lock-wrapper; sleep 1; xset dpms force off"
+bindsym $mod1+Shift+x exec "i3lock-fancy-rapid 5 3 -e && xset dpms force off"
 bindsym --release Control+F12 exec "xset dpms force off"
 
 # change focus
