@@ -158,8 +158,9 @@ bindsym $mod1+Return exec i3-sensible-terminal
 bindsym $mod1+Shift+Return workspace $ws1, exec i3-sensible-terminal
 
 # start a browser
-bindsym $mod1+i exec firefox
-bindsym $mod1+Shift+i workspace $ws2, exec firefox
+set $browserExec chromium
+bindsym $mod1+i exec $browserExec
+bindsym $mod1+Shift+i workspace $ws2, exec $browserExec
 
 # start a file manager
 bindsym $mod1+g exec caja
