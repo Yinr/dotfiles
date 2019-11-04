@@ -110,7 +110,6 @@ assign [class="GeoGebra"] $ws4
 assign [class="Gnome-calendar"] $ws5
 assign [class="Steam"] $ws7
 assign [class="TelegramDesktop"] $ws8
-assign [instance="wechat.exe"] $ws8
 assign [class="VirtualBox"] $ws9
 assign [class="keepassxc"] $ws10
 assign [class="electron-ssr"] $ws10
