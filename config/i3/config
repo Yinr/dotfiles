@@ -163,7 +163,7 @@ bindsym $mod1+i exec $browserExec
 bindsym $mod1+Shift+i workspace $ws2, exec $browserExec
 
 # start a file manager
-set $fmExec ranger
+set $fmExec i3-sensible-terminal -e ranger
 bindsym $mod1+g exec $fmExec
 bindsym $mod1+Shift+g workspace $ws5, exec $fmExec
 
