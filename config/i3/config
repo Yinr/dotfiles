@@ -177,8 +177,7 @@ bindsym $mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod1+Shift+e exec exitx
-#bindsym $mod1+Shift+x exec i3lock --color "$base01"
-bindsym $mod1+x exec i3lock-wrapper
+bindsym $mod1+x exec i3lock-fancy-rapid 5 3 -e
 bindsym $mod1+Shift+x exec "i3lock-fancy-rapid 5 3 -e && xset dpms force off"
 bindsym --release Control+F12 exec "xset dpms force off"
 
