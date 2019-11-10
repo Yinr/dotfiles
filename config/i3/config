@@ -153,8 +153,9 @@ bindsym $mod1+Shift+Tab workspace prev
 # Key Bindings
 #
 # start a terminal
-bindsym $mod1+Return exec i3-sensible-terminal
-bindsym $mod1+Shift+Return workspace $ws1, exec i3-sensible-terminal
+set $terminalExec i3-sensible-terminal
+bindsym $mod1+Return exec $terminalExec
+bindsym $mod1+Shift+Return workspace $ws1, exec $terminalExec
 
 # start a browser
 set $browserExec chromium
