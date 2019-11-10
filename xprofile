@@ -3,7 +3,7 @@ if [ -x /usr/bin/numlockx ]; then
 fi
 
 export GTK_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
+export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx5
 
 ## ssh agent
