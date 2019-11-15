@@ -89,7 +89,7 @@ handle_extension() {
 handle_image() {
     local mimetype="${1}"
     case "${mimetype}" in
-        SVG
+        # SVG
         image/svg+xml)
             convert "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
             exit 1;;
