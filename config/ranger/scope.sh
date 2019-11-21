@@ -33,6 +33,8 @@ PV_IMAGE_ENABLED="${5}"  # 'True' if image previews are enabled, 'False' otherwi
 FILE_EXTENSION="${FILE_PATH##*.}"
 FILE_EXTENSION_LOWER=$(echo ${FILE_EXTENSION} | tr '[:upper:]' '[:lower:]')
 
+SVG_PV_IMAGE_SIZE_MAX=102400  # 100KiB
+
 # Settings
 HIGHLIGHT_SIZE_MAX=262143  # 256KiB
 HIGHLIGHT_TABWIDTH=8
@@ -91,8 +93,10 @@ handle_image() {
     case "${mimetype}" in
         # SVG
         image/svg+xml)
-            convert "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
-            exit 1;;
+            if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -le "${SVG_PV_IMAGE_SIZE_MAX}" ]]; then
+                convert "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
+                exit 1
+            fi;;
 
         # Image
         image/*)
@@ -168,7 +172,7 @@ handle_mime() {
     local mimetype="${1}"
     case "${mimetype}" in
         # Text
-        text/* | */xml)
+        text/* | */xml | */json | image/svg+xml)
             # Syntax highlight
             if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
                 exit 2
