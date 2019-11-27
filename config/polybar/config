@@ -20,9 +20,7 @@ alert = #bd2c40
 ; bar/main
 ;=====================================================
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
-; xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor-fallback = eDP1
+monitor = ${env:MONITOR}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -55,11 +53,10 @@ locale = zh_CN.UTF-8
 
 modules-left = powermenu i3 info-weather
 modules-center = date
-modules-right = filesystem backlight volume xkeyboard touchpad memory cpu info-pkg-update wlan temperature battery
+modules-right = filesystem backlight volume xkeyboard touchpad memory cpu info-pkg-update wlan eth temperature battery
 
 tray-position = right
 tray-padding = 2
-; tray-transparent = true
 tray-background = #333
 
 ; wm-restack = bspwm
@@ -324,7 +321,7 @@ ramp-used-7-foreground = #ff5555
 ;=====================================================
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = ${env:DEVICE_WIRELESS:wlan}
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -332,7 +329,7 @@ format-connected = <ramp-signal> <label-connected>
 format-connected-prefix-font = 3
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid%: %downspeed:9%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -359,14 +356,14 @@ ramp-signal-foreground = ${colors.foreground-alt}
 ;=====================================================
 [module/eth]
 type = internal/network
-interface = enp2s0
+interface = ${env:DEVICE_ETHERNET:eth0}
 interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-font = 3
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = %local_ip%: %downspeed:9%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -484,16 +481,17 @@ animation-charging-framerate = 700
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 80
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+base-temperature = 20
+warn-temperature = 90
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
 
 format = <ramp> <label>
 format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -501,7 +499,8 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.foreground}
+ramp-4-foreground = ${colors.alert}
 
 ;=====================================================
 ; module/powermenu
