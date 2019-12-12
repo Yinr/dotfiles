@@ -35,5 +35,5 @@
       command: test -e ~/.config/electron-ssr/gui-config.json || install -m644 essr-config.json ~/.config/electron-ssr/gui-config.json
     -
       description: Update submodules
-      command: git submodule update --remote dotbot
+      command: git submodule update --remote .dotbot
 
