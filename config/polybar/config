@@ -580,6 +580,7 @@ margin-bottom = 5
 [module/info-pkg-update]
 type = custom/script
 exec = checkupdates 2> /dev/null | wc -l | sed 's/^0$/\n/'
+exec-if = test "$(cat /sys/class/power_supply/AC/online)" -eq "1"
 interval = 30
 
 format = <label>
@@ -598,7 +599,7 @@ click-right = i3-sensible-terminal -x yay -Syu --noconfirm --sudoloop &
 [module/info-weather]
 type = custom/script
 exec = ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
-exec-if = test -x ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh
+exec-if = test -x ~/.config/polybar/polybar-scripts/openweathermap-fullfeatured.sh -a "$(cat /sys/class/power_supply/AC/online)" -eq "1"
 interval = 600
 label-font = 4
 
