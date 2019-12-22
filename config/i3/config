@@ -385,13 +385,12 @@ exec --no-startup-id dunst
 exec --no-startup-id udiskie -t
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mconnect -d
-exec --no-startup-id redshift
-exec --no-startup-id variety
-exec --no-startup-id keepassxc
-exec --no-startup-id copyq
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && variety
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && keepassxc
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && copyq
 exec --no-startup-id fcitx5
 exec --no-startup-id clight
-exec --no-startup-id syncthing-gtk -m
-exec --no-startup-id electron-ssr
-exec --no-startup-id telegram-desktop -startintray
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && syncthing-gtk -m
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && electron-ssr
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && telegram-desktop -startintray
 
