@@ -142,6 +142,11 @@ bindsym $mod1+Shift+9 move container to workspace $ws9
 bindsym $mod1+Shift+0 move container to workspace $ws10
 bindsym $mod1+Shift+b move container to workspace $wsb
 
+# Make the currently focused window a scratchpad
+bindsym $mod1+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod1+minus scratchpad show
+
 # Switch in recent workspaces
 bindsym $mod1+Escape workspace back_and_forth
 # Goto urgent window
