@@ -106,6 +106,13 @@ handle_image() {
     local DEFAULT_SIZE="1920x1080"
 
     local mimetype="${1}"
+
+    case "${FILE_EXTENSION_LOWER}" in
+        mobi)
+            mimetype="application/x-mobipocket-ebook"
+            ;;
+    esac
+
     case "${mimetype}" in
         ## SVG
         image/svg+xml|image/svg)
