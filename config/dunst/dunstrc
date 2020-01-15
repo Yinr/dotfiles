@@ -215,6 +215,10 @@
     msg_urgency = critical
     fullscreen = show
 
+[mconnect]
+    appname = mconnect
+    background = "#285577"
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
