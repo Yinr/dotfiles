@@ -382,6 +382,8 @@ bindsym Shift+Print exec --no-startup-id flameshot full -c
 exec --no-startup-id picom -b
 # Bar Settings
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+# autotiling
+exec --no-startup-id autotiling
 
 #
 # Startup Programs
