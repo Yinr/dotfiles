@@ -395,7 +395,7 @@ exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && 
 
 exec --no-startup-id udiskie -ans
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id mconnect -d
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && mconnect -d
 exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && variety
 exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && copyq
 exec --no-startup-id fcitx5
