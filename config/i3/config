@@ -362,13 +362,9 @@ bindsym Shift+Print exec --no-startup-id flameshot full -c
 #exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 #exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
-#
-# compton
-#
-exec --no-startup-id compton -b
-
+# picom/compton
+exec --no-startup-id picom -b
 # Bar Settings
-#
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #
