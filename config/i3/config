@@ -74,6 +74,7 @@ smart_gaps on
 smart_borders on
 hide_edge_borders both
 
+workspace_layout tabbed
 default_orientation auto
 
 # Program Launcher
