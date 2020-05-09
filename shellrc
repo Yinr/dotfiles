@@ -71,4 +71,7 @@ miner() {
     ${bin_path}/xmr-stak -c ${cfg} --cpu ${cpu}
 }
 
+## pipenv completion
+which pipenv > /dev/null && eval "$(pipenv --completion)"
+
 ## alias
