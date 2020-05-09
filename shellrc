@@ -23,6 +23,11 @@ alias pbpaste="xclip -o -sel clip"
 alias vi="vim"
 alias yinr_aria2c="aria2c -c -m0 -x256 -j256 -k1M"
 
+## mconnect
+alias kde-send-text="mconnectctl share-text /org/mconnect/device/0"
+alias kde-send-file="mconnectctl share-file /org/mconnect/device/0"
+alias kde-send-url="mconnectctl share-url /org/mconnect/device/0"
+
 ## create_ap
 WIFI_DEVICE='wlp3s0'
 ap-enable() {
