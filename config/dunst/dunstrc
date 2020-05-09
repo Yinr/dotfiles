@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 10
+    font = "Source Code Pro,Noto Sans CJK SC,Monospace" 10
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -19,7 +19,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%a:</b> %s %p\n%b"
+    format = "%p <b>%s<sub><u><i>(%a)</i></u></sub></b>\n%b"
 
     # Sort messages by urgency
     sort = yes
@@ -102,7 +102,7 @@
     padding = 16
 
     # horizontal padding
-    horizontal_padding = 8
+    horizontal_padding = 12
 
     # Define a color for the separator.
     # possible values are:
@@ -141,6 +141,7 @@
 
     icon_position = left
     max_icon_size = 64
+    icon_path = "/usr/share/icons/hicolor/128x128/apps/:/usr/share/icons/hicolor/128x128/status/:/usr/share/icons/hicolor/128x128/devices/"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
