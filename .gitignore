@@ -6,3 +6,6 @@ vim/swapfiles
 vim/undofiles
 vim/bundle/
 !vim/bundle/Vundle.vim
+
+# python file
+__pycache__

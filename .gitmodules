@@ -63,3 +63,6 @@
 [submodule "config/mpv/addon-repo/recent"]
 	path = config/mpv/addon-repo/recent
 	url = https://github.com/hacel/mpv-scripts.git
+[submodule "config/ranger/plugins-repo/ranger-archives"]
+	path = config/ranger/plugins-repo/ranger-archives
+	url = https://github.com/maximtrp/ranger-archives.git

@@ -1,0 +1,1 @@
+../plugins-repo/ranger-archives/compress.py
