@@ -1,0 +1,1 @@
+../addon-repo/mpv-notify-send/notify-send.lua

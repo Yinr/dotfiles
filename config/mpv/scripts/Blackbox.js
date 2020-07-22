@@ -1,0 +1,1 @@
+../addon-repo/mpv-tools/scripts/Blackbox.js

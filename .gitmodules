@@ -11,3 +11,55 @@
 [submodule "config/oh-my-zsh.local/plugins/zsh-syntax-highlighting"]
 	path = config/oh-my-zsh.local/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "config/mpv/addon-repo/mpv-assrt"]
+	path = config/mpv/addon-repo/mpv-assrt
+	url = https://github.com/AssrtOSS/mpv-assrt.git
+[submodule "config/mpv/addon-repo/mpv-playlistmanager"]
+	path = config/mpv/addon-repo/mpv-playlistmanager
+	url = https://github.com/jonniek/mpv-playlistmanager.git
+[submodule "config/mpv/addon-repo/mpv-menu"]
+	path = config/mpv/addon-repo/mpv-menu
+	url = https://github.com/jonniek/mpv-menu.git
+[submodule "config/mpv/addon-repo/Anime4K"]
+	path = config/mpv/addon-repo/Anime4K
+	url = https://github.com/bloc97/Anime4K.git
+[submodule "config/mpv/addon-repo/mpv_thumbnail_script"]
+	path = config/mpv/addon-repo/mpv_thumbnail_script
+	url = https://github.com/TheAMM/mpv_thumbnail_script.git
+[submodule "config/mpv/addon-repo/mpv-bookmarker"]
+	path = config/mpv/addon-repo/mpv-bookmarker
+	url = https://github.com/NurioHin/mpv-bookmarker.git
+[submodule "config/mpv/addon-repo/detuur_mpv-scripts"]
+	path = config/mpv/addon-repo/detuur_mpv-scripts
+	url = https://github.com/detuur/mpv-scripts.git
+[submodule "config/mpv/addon-repo/mpv-copyTime"]
+	path = config/mpv/addon-repo/mpv-copyTime
+	url = https://github.com/Arieleg/mpv-copyTime.git
+[submodule "config/mpv/addon-repo/mpv-script-mozbugbox"]
+	path = config/mpv/addon-repo/mpv-script-mozbugbox
+	url = https://gitlab.com/mozbugbox/mpv-script-mozbugbox.git
+[submodule "config/mpv/addon-repo/mpv-fastforward"]
+	path = config/mpv/addon-repo/mpv-fastforward
+	url = https://github.com/zsugabubus/mpv-fastforward.git
+[submodule "config/mpv/addon-repo/mpv-tools"]
+	path = config/mpv/addon-repo/mpv-tools
+	url = https://github.com/VideoPlayerCode/mpv-tools.git
+[submodule "config/mpv/addon-repo/mpv-notify-send"]
+	path = config/mpv/addon-repo/mpv-notify-send
+	url = https://github.com/emilazy/mpv-notify-send.git
+[submodule "config/mpv/addon-repo/pause-indicator"]
+	path = config/mpv/addon-repo/pause-indicator
+	url = https://gist.github.com/9dbc69543118347d2e5f43239a7e609a.git
+[submodule "config/mpv/addon-repo/mpv-persist-properties"]
+	path = config/mpv/addon-repo/mpv-persist-properties
+	url = https://github.com/d87/mpv-persist-properties.git
+[submodule "config/mpv/addon-repo/mpv-progressbar"]
+	path = config/mpv/addon-repo/mpv-progressbar
+	url = https://github.com/torque/mpv-progressbar.git
+	branch = build
+[submodule "config/mpv/addon-repo/mpv-quack"]
+	path = config/mpv/addon-repo/mpv-quack
+	url = https://github.com/CounterPillow/mpv-quack.git
+[submodule "config/mpv/addon-repo/recent"]
+	path = config/mpv/addon-repo/recent
+	url = https://github.com/hacel/mpv-scripts.git

@@ -1,0 +1,1 @@
+../addon-repo/mpv-fastforward/fastforward.lua

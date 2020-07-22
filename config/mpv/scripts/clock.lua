@@ -1,0 +1,1 @@
+../addon-repo/mpv-script-mozbugbox/clock.lua

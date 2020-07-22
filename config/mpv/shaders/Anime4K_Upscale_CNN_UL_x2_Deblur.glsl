@@ -1,0 +1,1 @@
+../addon-repo/Anime4K/glsl/Upscale+Deblur/Anime4K_Upscale_CNN_UL_x2_Deblur.glsl

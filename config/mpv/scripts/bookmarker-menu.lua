@@ -1,0 +1,1 @@
+../addon-repo/mpv-bookmarker/bookmarker-menu.lua

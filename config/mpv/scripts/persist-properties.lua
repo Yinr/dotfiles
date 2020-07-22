@@ -1,0 +1,1 @@
+../addon-repo/mpv-persist-properties/persist-properties.lua
