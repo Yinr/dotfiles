@@ -7,7 +7,7 @@ rofi.lines:                          9
 ! "Number of columns" Set from: File
 rofi.columns:                        2
 ! "Font to use" Set from: File
-rofi.font:                           'Noto Sans CJK SC' 16
+rofi.font:                           Noto Sans CJK SC 16
 ! "Border width" Set from: Default
 ! rofi.bw:                             1
 ! "Location on screen" Set from: Default
