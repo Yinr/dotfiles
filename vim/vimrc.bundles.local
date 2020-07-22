@@ -5,6 +5,7 @@
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hotoo/pangu.vim'
 Plug 'ericpruitt/tmux.vim', {'rtp': 'vim'}
+Plug 'lilydjwg/fcitx.vim'
 " ====================
 " Color Scheme
 "Plug 'Color-Scheme-Explorer'           " 列出配色列表 
