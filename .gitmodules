@@ -66,3 +66,6 @@
 [submodule "config/ranger/plugins-repo/ranger-archives"]
 	path = config/ranger/plugins-repo/ranger-archives
 	url = https://github.com/maximtrp/ranger-archives.git
+[submodule "config/PulseEffects/addon-repos/PulseEffects-Presets"]
+	path = config/PulseEffects/addon-repos/PulseEffects-Presets
+	url = https://github.com/JackHack96/PulseEffects-Presets.git
