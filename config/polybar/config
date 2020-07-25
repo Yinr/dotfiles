@@ -538,7 +538,7 @@ type = internal/temperature
 thermal-zone = 0
 base-temperature = 20
 warn-temperature = 90
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
+hwmon-path = ${env:TEMP_HWMON_PATH}
 
 format = <ramp> <label>
 format-underline = ${colors.underline-pcstat}
