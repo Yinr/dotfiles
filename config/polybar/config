@@ -90,7 +90,7 @@ modules-right = filesystem volume backlight touchpad xkeyboard info-pkg-update c
 
 tray-position = right
 tray-padding = 2
-tray-background = #333
+; tray-background = ${root.background}
 
 wm-restack = i3
 
