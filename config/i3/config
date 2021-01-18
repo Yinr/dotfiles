@@ -320,6 +320,23 @@ mode "volume" {
     bindsym $mod1+$mod2+v mode "default"
 }
 
+bindsym $mod1+$mod2+b mode "brightness"
+mode "brightness" {
+    # key bindings for brightness mode
+    # xbacklight controls
+    bindsym space exec --no-startup-id test "$(xbacklight -get)" -eq "100" && xbacklight -set 1 -steps 20 || xbacklight -set 100 -steps 20
+    bindsym k exec --no-startup-id xbacklight -inc 5 -steps 20 # increase screen brightness
+    bindsym j exec --no-startup-id xbacklight -dec 5 -steps 20 # increase screen brightness
+    bindsym Shift+k exec --no-startup-id xbacklight -inc 1 -steps 20
+    bindsym Shift+j exec --no-startup-id xbacklight -dec 1 -steps 20
+    bindsym l exec --no-startup-id xbacklight -inc 10 -steps 20
+    bindsym h exec --no-startup-id xbacklight -dec 10 -steps 20
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod1+$mod2+b mode "default"
+}
+
 bindsym $mod1+$mod2+p mode "screenshot"
 mode "screenshot" {
         # key bindings for screenshot mode
