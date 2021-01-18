@@ -418,7 +418,7 @@ bindsym Shift+Print exec --no-startup-id flameshot full -c
 #exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
 # picom/compton
-exec --no-startup-id picom -b
+# exec --no-startup-id picom -b
 # Bar Settings
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # autotiling
