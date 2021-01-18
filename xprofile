@@ -2,9 +2,10 @@ if [ -x /usr/bin/numlockx ]; then
     /usr/bin/numlockx on
 fi
 
-export GTK_IM_MODULE=fcitx5
+export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx5
+export SDL_IM_MODULE=fcitx
 
 ## ssh agent
 eval "$(ssh-agent)"
