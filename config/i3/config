@@ -430,6 +430,8 @@ exec --no-startup-id autotiling
 exec --no-startup-id nm-applet
 # blueman for bluetooth
 exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && blueman-applet
+# turn off touchpad
+exec --no-startup-id ${HOME}/.config/i3/touchpad.sh off
 
 # GeoClue2
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
