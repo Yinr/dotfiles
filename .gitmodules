@@ -69,3 +69,6 @@
 [submodule "config/PulseEffects/addon-repos/PulseEffects-Presets"]
 	path = config/PulseEffects/addon-repos/PulseEffects-Presets
 	url = https://github.com/JackHack96/PulseEffects-Presets.git
+[submodule "config/fcitx5/themes/simple"]
+	path = config/fcitx5/themes/simple
+	url = https://github.com/iovxw/fcitx5-simple-theme.git
