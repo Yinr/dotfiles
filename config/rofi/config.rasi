@@ -1,0 +1,13 @@
+configuration {
+	modi: "combi,window,run";
+	width: 1280;
+	lines: 9;
+	columns: 2;
+	font: "Noto Sans CJK SC 16";
+	show-icons: true;
+	terminal: "i3-sensible-terminal";
+	eh: 2;
+	combi-modi: "drun,run";
+	theme: "Arc-Dark";
+    run-shell-command: "{terminal} -e \"{cmd}; echo; echo -n 'Press any key to exit...'; read -n 1 -s\"";
+}
