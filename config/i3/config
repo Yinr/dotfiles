@@ -443,8 +443,8 @@ exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && 
 exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && copyq
 exec --no-startup-id fcitx5
 exec --no-startup-id clight
-exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && keepassxc
+exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && env QT_XCB_TABLET_LEGACY_COORDINATES=1 keepassxc
 exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && syncthing-gtk -m
-exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && qv2ray
+# exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && env QT_XCB_TABLET_LEGACY_COORDINATES=1 qv2ray
 exec --no-startup-id test "$(cat /sys/class/power_supply/AC/online)" -eq "1" && telegram-desktop -startintray
 
