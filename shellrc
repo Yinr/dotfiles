@@ -42,6 +42,15 @@ alias ap-clients='create_ap --list-clients $WIFI_DEVICE'
 ## https://github.com/nvbn/thefuck
 eval $(thefuck --alias well)
 
+## fzf
+if [ "${SHELL##*/}" = "zsh" ]; then
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+elif [ "${SHELL##*/}" = "bash" ]; then
+    source /usr/share/fzf/completion.bash
+    source /usr/share/fzf/key-bindings.bash
+fi
+
 ## noise generator
 ## usage:
 ##     play-noise whitenoise # to play white noise
