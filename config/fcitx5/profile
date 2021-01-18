@@ -1,10 +1,10 @@
 [Groups/0]
 # Group Name
-Name=Main
+Name=Other
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=pinyin
+DefaultIM=mozc
 
 [Groups/0/Items/0]
 # Name
@@ -14,23 +14,23 @@ Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=pinyin
+Name=mozc
 # Layout
 Layout=
 
 [Groups/0/Items/2]
 # Name
-Name=mozc
+Name=rime
 # Layout
 Layout=
 
 [Groups/1]
 # Group Name
-Name=Other
+Name=Main
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=anthy
+DefaultIM=pinyin
 
 [Groups/1/Items/0]
 # Name
@@ -40,19 +40,13 @@ Layout=
 
 [Groups/1/Items/1]
 # Name
-Name=anthy
+Name=pinyin
 # Layout
 Layout=
 
 [Groups/1/Items/2]
 # Name
 Name=mozc
-# Layout
-Layout=
-
-[Groups/1/Items/3]
-# Name
-Name=rime
 # Layout
 Layout=
 
