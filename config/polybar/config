@@ -621,8 +621,8 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #1793d1
 
 ; click-left = i3-sensible-terminal pacman -Syu
-click-left = i3-sensible-terminal -x yay -Syu --sudoloop &
-click-right = i3-sensible-terminal -x yay -Syu --noconfirm --sudoloop &
+click-left = i3-sensible-terminal -x "yay -Syu --sudoloop; echo -n \"\\\nPress any key to exit...\"; read -n 1 -s" &
+click-right = i3-sensible-terminal -x "yay -Syu --noconfirm --sudoloop; echo -n \"\\\nPress any key to exit...\"; read -n 1 -s" &
 
 ;=====================================================
 ; module/info-weather: openweathermap-fullfeatured
