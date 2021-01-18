@@ -30,6 +30,9 @@
       description: Copying dotfile private config
       command: test -e ~/.config/dotfile-private/private.conf || install -m640 ~/.config/dotfile-private/private.example.conf ~/.config/dotfile-private/private.conf
     -
+      description: Change flameshot username
+      command: test -e ~/.config/flameshot/flameshot.ini -a "$USER" != "yinr" || sed -Ei "s/\/home\/yinr\//\/home\/$USER\//" ~/.config/flameshot/flameshot.ini
+    -
       description: Copying ElectronSSR config
       command: test -e ~/.config/electron-ssr/gui-config.json || install -m644 essr-config.json ~/.config/electron-ssr/gui-config.json
     -
