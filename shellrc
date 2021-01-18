@@ -84,4 +84,17 @@ miner() {
 ## pipenv completion
 which pipenv > /dev/null && eval "$(pipenv --completion)"
 
+## play bilibili video via mpv using annie parser
+bilimpv() {
+    info=$(annie -j "$1" | jq -r '.[0]')
+    title=$(echo $info | jq -r '.title') # 视频标题
+    # xml=$(echo $info | jq -r '.caption.url') # 弹幕 xml？
+    all=$(echo $info | jq -r '.streams|[.[]][-1]') # url 是 bili 链接，-1 取最高分辨率
+    quality=$(echo $all | jq -r '.quality')  #显示分辨率
+    mp4="$(echo $all | jq -r '.parts[]|select (.ext=="mp4").url')"
+    m4a="$(echo $all | jq -r '.parts[]|select (.ext=="m4a").url')"
+    echo $title - $quality
+    mpv --referrer="${1}" --audio-file="${m4a}" "${mp4}"
+}
+
 ## alias
