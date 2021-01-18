@@ -18,9 +18,6 @@
         glob: true
         relink: true
         path: config/*
-    ~/.config/variety/variety.conf:
-        path: variety.conf
-        force: true
 
 - create:
     - ~/.config/electron-ssr
