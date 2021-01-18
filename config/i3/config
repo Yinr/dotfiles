@@ -111,6 +111,7 @@ assign [class="electron-ssr"] $ws10
 
 for_window [class="KeePassXC"] floating enable
 for_window [class="Variety"] floating enable
+for_window [class="Qq"] floating enable
 
 # switch to workspace
 bindsym $mod1+1 workspace $ws1
