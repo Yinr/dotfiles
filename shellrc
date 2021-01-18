@@ -35,6 +35,7 @@ ap-enable() {
 }
 alias ap-enable-enp2s0='ap-enable enp2s0'
 alias ap-disable='sudo create_ap --stop $WIFI_DEVICE'
+alias ap-running='create_ap --list-running'
 alias ap-clients='create_ap --list-clients $WIFI_DEVICE'
 
 ## the fuck
