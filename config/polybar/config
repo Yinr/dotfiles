@@ -665,6 +665,7 @@ format = <label>
 label = %output%%
 scroll-up = xbacklight +5
 scroll-down = xbacklight -5
-click-left = busctl --expect-reply=false --user call org.clight.clight /org/clight/clight org.clight.clight Calibrate
+click-left = busctl --expect-reply=false --user call org.clight.clight /org/clight/clight org.clight.clight Capture "bb" false false
+click-right = test "$(busctl --user get-property org.clight.clight /org/clight/clight org.clight.clight Inhibited)" = "b true" && busctl --expect-reply=false --user call org.clight.clight /org/clight/clight org.clight.clight Inhibit b false || busctl --expect-reply=false --user call org.clight.clight /org/clight/clight org.clight.clight Inhibit b true
 
 ; vim:ft=dosini
