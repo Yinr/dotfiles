@@ -98,3 +98,6 @@ bilimpv() {
 }
 
 ## alias
+alias steam-fix="sudo /media/yinr/Software/Entertainment/Steam/ascf"
+alias npmtb="npm --registry 'http://registry.npm.taobao.org'"
+
